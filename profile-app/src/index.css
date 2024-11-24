@@ -1,0 +1,7 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.tooltip {
+    @apply bg-gray-800 text-white text-sm rounded px-2 py-1 shadow-lg;
+  }
