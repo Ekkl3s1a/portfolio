@@ -78,18 +78,30 @@ const NavBar = () => {
           {/* Mobile Hamburger Menu */}
           <button
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-gray-800 dark:text-gray-200 focus:outline-none"
+            className="md:hidden flex flex-col items-center justify-center w-12 h-12 bg-gradient-to-r from-indigo-300 to-blue-500 dark:from-gray-900 dark:to-gray-600 rounded-full shadow-lg focus:outline-none hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out"
             aria-label="Toggle menu"
           >
-            <span className="material-icons">
-              {isMobileMenuOpen ? "close" : "menu"}
-            </span>
+            <span
+              className={`h-1 w-6 bg-white rounded transition-transform duration-300 ease-in-out ${
+                isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            />
+            <span
+              className={`h-1 w-6 bg-white rounded transition-opacity duration-300 ease-in-out ${
+                isMobileMenuOpen ? "opacity-0" : "opacity-100"
+              }`}
+            />
+            <span
+              className={`h-1 w-6 bg-white rounded transition-transform duration-300 ease-in-out ${
+                isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            />
           </button>
 
           {/* Theme Toggle */}
           <button
             onClick={toggleDarkMode}
-            className="ml-4 p-2 rounded-md bg-gray-200 dark:bg-gray-700"
+            className="ml-4 p-2 rounded-md bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 hover:bg-gray-200 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             aria-label="Toggle theme"
           >
             {darkMode ? (

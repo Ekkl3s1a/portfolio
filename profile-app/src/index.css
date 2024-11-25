@@ -5,3 +5,31 @@
 .tooltip {
     @apply bg-gray-800 text-white text-sm rounded px-2 py-1 shadow-lg;
   }
+/* Add to global.css or a Tailwind config */
+:root {
+  --bg-light: #f8fafc; /* Very light gray for light mode */
+  --bg-dark: #1e293b; /* Deep slate blue for dark mode */
+  --text-light: #1f2937; /* Dark slate gray for text in light mode */
+  --text-dark: #f3f4f6; /* Almost white for text in dark mode */
+  --card-dark: #334155; /* Slightly lighter for card backgrounds */
+}
+
+.dark {
+  --bg-dark: #0f172a; /* Slightly darker background for dark mode */
+  --card-dark: #1e293b; /* Lighter card background for contrast */
+  --text-dark: #e2e8f0; /* Softer white for better readability */
+  background: linear-gradient(180deg, #0f172a, #1e293b);
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}

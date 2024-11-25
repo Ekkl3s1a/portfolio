@@ -13,11 +13,11 @@ import ScrollProgressBar from "./components/ScrollProgressBar";
 
 const App = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 transition-all duration-300">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-100 via-gray-150 to-gray-200 dark:from-gray-800 dark:via-gray-750 dark:to-gray-700 text-gray-900 dark:text-gray-100 transition-all duration-500 ease-in-out shadow-inner">
       <Header />
       <NavBar />
       <ScrollProgressBar />
-      <main  className="flex-1 max-w-5xl mx-auto p-4 sm:p-6 lg:p-8 space-y-12">
+      <main className="flex-1 max-w-5xl mx-auto p-4 sm:p-6 lg:p-8 space-y-12">
         <AnimatedSection>
           <section id="profile">
             <Profile />
