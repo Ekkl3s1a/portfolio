@@ -16,20 +16,28 @@ const interests = [
 
 const Interests = () => {
   return (
-    <section className="my-12 sm:my-14 lg:my-16 p-6 rounded-lg shadow-md transition-all duration-300 bg-[var(--gradient-light)] dark:bg-[var(--gradient-dark)] hover:bg-[var(--hover-light)] dark:hover:bg-[var(--hover-dark)]">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--text-light)] dark:text-[var(--text-dark)] mb-6 leading-tight tracking-wide">
-        Interests
-      </h2>
-      <ul className="mt-4 text-lg text-[var(--text-light)] dark:text-[var(--text-dark)] leading-relaxed space-y-8">
-      {interests.map((interest, index) => (
+    <section
+      className="my-12 sm:my-14 lg:my-16 p-8 bg-[var(--bg-light)] dark:bg-[var(--bg-dark)] 
+    rounded-lg shadow-lg border border-[var(--border-light)] dark:border-[var(--border-dark)]"
+    >
+      <header className="mb-8">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[var(--text-light)] dark:text-[var(--text-dark)] leading-tight tracking-wide mb-8">
+          Interests
+        </h2>
+      </header>
+      <ul className="space-y-8 leading-relaxed">
+        {interests.map((interest, index) => (
           <li key={index}>
-              <Card>
-                <strong className="text-gray-700 dark:text-gray-100">
-                  {interest.title}:
-                </strong>
-                {" "}
-                {interest.details}
-              </Card>
+            <Card>
+            <div>
+                <h3 className="text-xl font-semibold text-[var(--text-light)] dark:text-[var(--text-dark)] mb-2">
+                  {interest.title}
+                </h3>
+                <p className="text-sm text-[var(--text-light)] dark:text-[var(--text-dark)]">
+                  {interest.details}
+                </p>
+              </div>
+            </Card>
           </li>
         ))}
       </ul>

@@ -29,16 +29,25 @@ const socials = [
 
 const Social = () => {
   return (
-    <section className="my-12 sm:my-14 lg:my-16 p-6 rounded-lg shadow-md transition-all duration-300 bg-[var(--gradient-light)] dark:bg-[var(--gradient-dark)] hover:bg-[var(--hover-light)] dark:hover:bg-[var(--hover-dark)]">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--text-light)] dark:text-[var(--text-dark)] mb-6 leading-tight tracking-wide">
-        Social
-      </h2>
-      <ul className="mt-4 text-lg text-[var(--text-light)] dark:text-[var(--text-dark)] leading-relaxed space-y-8">
+    <section
+      className="my-12 sm:my-14 lg:my-16 p-8 bg-[var(--bg-light)] dark:bg-[var(--bg-dark)] 
+      rounded-lg shadow-lg border border-[var(--border-light)] dark:border-[var(--border-dark)]"
+    >
+      <header className="mb-8">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[var(--text-light)] dark:text-[var(--text-dark)] leading-tight tracking-wide mb-8">
+          Social
+        </h2>
+      </header>
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 leading-relaxed">
         {socials.map((social, index) => (
           <li key={index}>
-            <Card link={social.link}>
-              {social.image}
-              {social.name}
+            <Card link={social.link} >
+              <div className="flex items-center space-x-4">
+                {social.image}
+                <span className="text-xl font-medium text-[var(--text-light)] dark:text-[var(--text-dark)]">
+                  {social.name}
+                </span>
+              </div>
             </Card>
           </li>
         ))}

@@ -36,20 +36,37 @@ const Projects = () => {
   }
 
   return (
-    <section className="my-12 sm:my-14 lg:my-16 p-6 rounded-lg shadow-md transition-all duration-300 bg-[var(--gradient-light)] dark:bg-[var(--gradient-dark)] hover:bg-[var(--hover-light)] dark:hover:bg-[var(--hover-dark)]">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--text-light)] dark:text-[var(--text-dark)] mb-6 leading-tight tracking-wide">
-        Projects
-      </h2>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mt-4 text-lg text-[var(--text-light)] dark:text-[var(--text-dark)] leading-relaxed">
+    <section
+      className="my-12 sm:my-14 lg:my-16 p-8 bg-[var(--bg-light)] dark:bg-[var(--bg-dark)] 
+    rounded-lg shadow-lg border border-[var(--border-light)] dark:border-[var(--border-dark)]"
+    >
+      <header className="mb-8">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[var(--text-light)] dark:text-[var(--text-dark)] leading-tight tracking-wide mb-8">
+          Projects
+        </h2>
+      </header>
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 leading-relaxed">
         {projects.map((project, index) => (
           <li key={index}>
             {project.description && (
               <Tooltip tooltipText={project.description}>
-                <Card link={project.link}>{project.name}</Card>
+                <Card link={project.link}>
+                  <div className="flex items-center space-x-4">
+                    <span className="text-xl font-medium text-[var(--text-light)] dark:text-[var(--text-dark)]">
+                      {project.name}
+                    </span>
+                  </div>
+                </Card>
               </Tooltip>
             )}
             {!project.description && (
-              <Card link={project.link}>{project.name}</Card>
+              <Card link={project.link}>
+                <div className="flex items-center space-x-4">
+                  <span className="text-xl font-medium text-[var(--text-light)] dark:text-[var(--text-dark)]">
+                    {project.name}
+                  </span>
+                </div>
+              </Card>
             )}
           </li>
         ))}
