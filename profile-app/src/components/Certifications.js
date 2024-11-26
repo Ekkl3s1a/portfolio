@@ -1,9 +1,11 @@
 // Certifications.js
+import { useState, useEffect } from "react";
 import Card from "./Card";
 import Tooltip from "./Tooltip";
 import CEH_Badge from "../assets/CEH_Badge.png";
 import PCEP_Badge from "../assets/PCEP_Badge.png";
 import PSMI_Badge from "../assets/PSMI_Badge.png";
+import Spinner from "./Spinner";
 
 const certifications = [
   {
@@ -28,6 +30,20 @@ const certifications = [
 ];
 
 const Certifications = () => {
+  const [loading, setLoading] = useState(true); // Add loading state
+
+  useEffect(() => {
+    // Simulate loading delay for demonstration purposes
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000); // simulate 1-second loading time
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Spinner />; // Display spinner while loading
+  }
+
   return (
     <section
       className="my-12 sm:my-14 lg:my-16 p-8 bg-[var(--bg-light)] dark:bg-[var(--bg-dark)] 

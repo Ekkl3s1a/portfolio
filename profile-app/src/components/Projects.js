@@ -7,13 +7,15 @@ import Spinner from "./Spinner";
 const Projects = () => {
   const [loading, setLoading] = useState(true);
   const [projects, setProjects] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchGitHubProjects = async () => {
       try {
-        const response = await fetch(
-          "https://api.github.com/users/F13ND5/repos?visibility=public"
-        );
+        const response = await fetch("https://api.github.com/users/F13ND5/repos?visibility=public");
+        if (!response.ok) {
+          throw new Error("Failed to fetch projects");
+        }
         const data = await response.json();
         setProjects(
           data.map((repo) => ({
@@ -24,7 +26,8 @@ const Projects = () => {
         );
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching GitHub projects:", error);
+        setError("Failed to load projects. Please try again later.");
+        setLoading(false); // Set loading to false even in case of error
       }
     };
 
@@ -35,13 +38,36 @@ const Projects = () => {
     return <Spinner />;
   }
 
+  if (error) {
+    return (
+      <div
+        className="flex items-center justify-center bg-red-100 text-red-700 
+        p-5 rounded-lg shadow-lg space-x-3 w-full max-w-xl mx-auto"
+      >
+        <i className="fa fa-exclamation-triangle text-3xl"></i>
+        <span className="text-lg font-medium">{error}</span>
+        <button
+          onClick={() => window.location.reload()}
+          className="ml-4 bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 
+          focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+          aria-label="Retry"
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
+
   return (
     <section
       className="my-12 sm:my-14 lg:my-16 p-8 bg-[var(--bg-light)] dark:bg-[var(--bg-dark)] 
     rounded-lg shadow-lg border border-[var(--border-light)] dark:border-[var(--border-dark)]"
     >
       <header className="mb-8">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[var(--text-light)] dark:text-[var(--text-dark)] leading-tight tracking-wide mb-8">
+        <h2
+          className="text-4xl md:text-5xl font-extrabold text-[var(--text-light)] dark:text-[var(--text-dark)] 
+          leading-tight tracking-wide mb-8"
+        >
           Projects
         </h2>
       </header>
