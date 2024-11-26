@@ -1,3 +1,4 @@
+// Header.js
 import { motion } from "framer-motion";
 
 const Header = () => {
@@ -11,7 +12,7 @@ const Header = () => {
       <h1 className="text-5xl sm:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-teal-500 via-blue-500 to-indigo-500 dark:from-yellow-400 dark:to-yellow-300">
         Bruno Carvalho
       </h1>
-      <p className="text-xl sm:text-2xl text-gray-800 dark:text-gray-300 mt-2 font-medium">
+      <p className="text-xl sm:text-2xl text-[var(--text-light)] dark:text-[var(--text-dark)] mt-2 font-medium">
         Developer & Tech Enthusiast
       </p>
     </motion.header>

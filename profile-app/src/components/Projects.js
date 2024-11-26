@@ -36,11 +36,11 @@ const Projects = () => {
   }
 
   return (
-    <section className="my-12 sm:my-14 lg:my-16 p-6 rounded-lg shadow-md transition-all duration-300 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 hover:from-gray-200 hover:via-gray-300 hover:to-gray-400 dark:hover:from-gray-700 dark:hover:via-gray-600 dark:hover:to-gray-500">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900 dark:text-gray-100 mb-6 leading-tight tracking-wide">
+    <section className="my-12 sm:my-14 lg:my-16 p-6 rounded-lg shadow-md transition-all duration-300 bg-[var(--gradient-light)] dark:bg-[var(--gradient-dark)] hover:bg-[var(--hover-light)] dark:hover:bg-[var(--hover-dark)]">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[var(--text-light)] dark:text-[var(--text-dark)] mb-6 leading-tight tracking-wide">
         Projects
       </h2>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mt-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mt-4 text-lg text-[var(--text-light)] dark:text-[var(--text-dark)] leading-relaxed">
         {projects.map((project, index) => (
           <li key={index}>
             {project.description && (

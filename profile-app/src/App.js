@@ -13,7 +13,7 @@ import ScrollProgressBar from "./components/ScrollProgressBar";
 
 const App = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-100 via-gray-150 to-gray-200 dark:from-gray-800 dark:via-gray-750 dark:to-gray-700 text-gray-900 dark:text-gray-100 transition-all duration-500 ease-in-out shadow-inner">
+    <div className="min-h-screen flex flex-col transition-all duration-500 ease-in-out shadow-inner">
       <Header />
       <NavBar />
       <ScrollProgressBar />

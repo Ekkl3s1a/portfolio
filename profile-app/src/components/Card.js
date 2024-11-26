@@ -1,7 +1,7 @@
 // Card.js
 const Card = ({ children, link, image }) => {
   const content = (
-    <div className="bg-white dark:bg-[var(--card-dark)] text-gray-900 dark:text-gray-100 p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 hover:-rotate-1 transition-transform duration-300 border border-gray-200 dark:border-gray-700 flex flex-col items-center md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+    <div className="bg-[var(--card-light)] dark:bg-[var(--card-dark)] text-[var(--text-light)] dark:text-[var(--text-dark)] p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 hover:-rotate-1 transition-transform duration-300 border border-[var(--border-light)] dark:border-[var(--border-dark)] flex flex-col items-center md:flex-row space-y-4 md:space-y-0 md:space-x-4">
       {image && (
         <img
           src={image}

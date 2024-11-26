@@ -12,13 +12,31 @@
   --text-light: #1f2937; /* Dark slate gray for text in light mode */
   --text-dark: #f3f4f6; /* Almost white for text in dark mode */
   --card-dark: #334155; /* Slightly lighter for card backgrounds */
+  --card-light: #ffffff; /* White for card backgrounds in light mode */
+  --border-light: #e5e7eb; /* Light border for light mode */
+  --border-dark: #4b5563; /* Darker border for dark mode */
+  --hover-light: #e2e8f0; /* Hover effect for light mode */
+  --hover-dark: #374151; /* Hover effect for dark mode */
+  --gradient-light: linear-gradient(180deg, #f8fafc, #e2e8f0);
+  --gradient-dark: linear-gradient(180deg, #0f172a, #1e293b);
 }
 
 .dark {
   --bg-dark: #0f172a; /* Slightly darker background for dark mode */
   --card-dark: #1e293b; /* Lighter card background for contrast */
   --text-dark: #e2e8f0; /* Softer white for better readability */
-  background: linear-gradient(180deg, #0f172a, #1e293b);
+  --border-dark: #4b5563; /* Border for dark mode */
+  --hover-dark: #475569; /* Adjusted hover effect for better visibility */
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+.dark body {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
 }
 
 @keyframes gradient {
