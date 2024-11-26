@@ -38,7 +38,7 @@ const Certifications = () => {
           Certifications
         </h2>
       </header>
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 leading-relaxed">
+      <ul className="space-y-8 leading-relaxed">
         {certifications.map((cert, index) => (
           <li key={index}>
             <Tooltip tooltipText={cert.description}>

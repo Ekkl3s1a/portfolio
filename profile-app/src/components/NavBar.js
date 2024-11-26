@@ -1,6 +1,6 @@
 // NavBar.js
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { SunIcon, MoonIcon } from "@heroicons/react/solid";
 import { ChevronUpIcon } from "@heroicons/react/outline";
 
@@ -8,15 +8,20 @@ const NavBar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [activeSection, setActiveSection] = useState(null);
 
-  const sections = [
-    { id: "profile", label: "Profile" },
-    { id: "social", label: "Social" },
-    { id: "certifications", label: "Certifications" },
-    { id: "projects", label: "Projects" },
-    { id: "competencies", label: "Core Competencies" },
-    { id: "interests", label: "Interests" },
-  ];
+  // Memoize the sections array to prevent unnecessary re-renders
+  const sections = useMemo(
+    () => [
+      { id: "profile", label: "Profile" },
+      { id: "social", label: "Social" },
+      { id: "certifications", label: "Certifications" },
+      { id: "projects", label: "Projects" },
+      { id: "competencies", label: "Core Competencies" },
+      { id: "interests", label: "Interests" },
+    ],
+    []
+  );
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -49,8 +54,30 @@ const NavBar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+
+    const options = {
+      rootMargin: "0px",
+      threshold: 1, // 100% of the section must be visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, options);
+
+    sections.forEach((section) => {
+      const el = document.getElementById(section.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
+  }, [sections]);
 
   return (
     <>
@@ -67,7 +94,11 @@ const NavBar = () => {
               <li key={section.id}>
                 <button
                   onClick={() => scrollToSection(section.id)}
-                  className="text-[var(--text-light)] dark:text-[var(--text-dark)] hover:underline underline-offset-4 decoration-blue-500 transition"
+                  className={`${
+                    activeSection === section.id
+                      ? "text-blue-500"
+                      : "text-[var(--text-light)] dark:text-[var(--text-dark)]"
+                  } hover:underline underline-offset-4 decoration-blue-500 transition`}
                 >
                   {section.label}
                 </button>
