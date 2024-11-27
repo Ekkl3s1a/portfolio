@@ -1,5 +1,12 @@
 // Certifications.js
 import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCube, Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-cube";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import Card from "./Card";
 import Tooltip from "./Tooltip";
 import CEH_Badge from "../assets/CEH_Badge.png";
@@ -54,9 +61,27 @@ const Certifications = () => {
           Certifications
         </h2>
       </header>
-      <ul className="space-y-8 leading-relaxed">
+
+      {/* Swiper */}
+      <Swiper
+        effect="cube"
+        grabCursor={true}
+        cubeEffect={{
+          shadow: true,
+          slideShadows: true,
+          shadowOffset: 20,
+          shadowScale: 0.9,
+        }}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 8000 }}
+        loop={true}
+        speed={1500}
+        modules={[EffectCube, Navigation, Pagination]}
+        className="swiper"
+      >
         {certifications.map((cert, index) => (
-          <li key={index}>
+          <SwiperSlide key={index} className="flex justify-center items-center">
             <Tooltip tooltipText={cert.description}>
               <Card link={cert.link}>
                 <div className="flex flex-col items-center text-center space-y-4">
@@ -71,9 +96,9 @@ const Certifications = () => {
                 </div>
               </Card>
             </Tooltip>
-          </li>
+          </SwiperSlide>
         ))}
-      </ul>
+      </Swiper>
     </section>
   );
 };

@@ -77,14 +77,14 @@ const Projects = () => {
         </h2>
       </header>
 
-      {/* Swiper Carousel */}
+      {/* Swiper */}
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={-20}
+        spaceBetween={-30}
         slidesPerView={2}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 5000 }}
+        autoplay={{ delay: 8000 }}
         loop={true}
         breakpoints={{
           640: { slidesPerView: 1 },
@@ -94,7 +94,7 @@ const Projects = () => {
         className="pb-8"
       >
         {projects.map((project, index) => (
-          <SwiperSlide key={index} className="px-8 py-8">
+          <SwiperSlide key={index} className="px-12 py-8">
             <Tooltip tooltipText={project.description || "No description available"}>
               <Card link={project.link}>
                 <div className="flex items-center space-x-4">
