@@ -1,5 +1,5 @@
 // App.js
-import React from "react";
+import React, {/* useEffect, useState */} from "react";
 import NavBar from "./components/NavBar";
 import Header from "./components/Header";
 import Profile from "./components/Profile";
@@ -12,6 +12,33 @@ import AnimatedSection from "./components/AnimatedSection";
 import ScrollProgressBar from "./components/ScrollProgressBar";
 
 const App = () => {
+  /*const [isSafari, setIsSafari] = useState(false);
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent;
+    // Detect Safari by checking if "Safari" is in the userAgent and "Chrome" is not
+    if (
+      userAgent.indexOf("Safari") > -1 &&
+      userAgent.indexOf("Chrome") === -1
+    ) {
+      setIsSafari(true);
+    }
+  }, []);
+
+  if (isSafari) {
+    return (
+      <div
+        className="flex items-center justify-center bg-red-100 text-red-700 
+        p-5 rounded-lg shadow-lg space-x-3 w-full max-w-xl mx-auto"
+      >
+        <i className="fa fa-exclamation-triangle text-3xl"></i>
+        <span className="text-lg font-medium">
+          Please leave Safari for a better experience
+        </span>
+      </div>
+    );
+  }*/
+
   return (
     <div
       className="min-h-screen flex flex-col bg-[var(--bg-light)] dark:bg-[var(--bg-dark)] 
