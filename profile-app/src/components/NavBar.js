@@ -57,7 +57,7 @@ const NavBar = () => {
 
     const options = {
       rootMargin: "0px",
-      threshold: 1, // 100% of the section must be visible
+      threshold: 0.8, // 100% of the section must be visible
     };
 
     const observer = new IntersectionObserver((entries) => {

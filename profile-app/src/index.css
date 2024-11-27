@@ -102,3 +102,30 @@ button:hover {
   background-size: 200% 200%;
   animation: gradient-x 2s linear infinite;
 }
+
+.swiper {
+  width: 100%;
+  height: auto;
+  overflow-y: visible !important;
+  overflow-x: clip !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--text-light);
+}
+
+.swiper-pagination-bullet {
+  background: var(--text-light);
+  opacity: 1;
+  transition: background 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--text-dark);
+}
+
+/* Ensure tooltips are always on top */
+.tooltip {
+  z-index: 9999 !important;
+}

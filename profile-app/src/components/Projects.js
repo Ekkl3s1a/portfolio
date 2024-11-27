@@ -1,5 +1,10 @@
 // Projects.js
 import React, { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import Card from "./Card";
 import Tooltip from "./Tooltip";
 import Spinner from "./Spinner";
@@ -71,21 +76,26 @@ const Projects = () => {
           Projects
         </h2>
       </header>
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 leading-relaxed">
+
+      {/* Swiper Carousel */}
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={-20}
+        slidesPerView={2}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 5000 }}
+        loop={true}
+        breakpoints={{
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 2 },
+        }}
+        className="pb-8"
+      >
         {projects.map((project, index) => (
-          <li key={index}>
-            {project.description && (
-              <Tooltip tooltipText={project.description}>
-                <Card link={project.link}>
-                  <div className="flex items-center space-x-4">
-                    <span className="text-xl font-medium text-[var(--text-light)] dark:text-[var(--text-dark)]">
-                      {project.name}
-                    </span>
-                  </div>
-                </Card>
-              </Tooltip>
-            )}
-            {!project.description && (
+          <SwiperSlide key={index} className="px-8 py-8">
+            <Tooltip tooltipText={project.description || "No description available"}>
               <Card link={project.link}>
                 <div className="flex items-center space-x-4">
                   <span className="text-xl font-medium text-[var(--text-light)] dark:text-[var(--text-dark)]">
@@ -93,10 +103,10 @@ const Projects = () => {
                   </span>
                 </div>
               </Card>
-            )}
-          </li>
+            </Tooltip>
+          </SwiperSlide>
         ))}
-      </ul>
+      </Swiper>
     </section>
   );
 };
