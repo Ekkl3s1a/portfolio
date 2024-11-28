@@ -30,7 +30,7 @@ const socials = [
 const Social = () => {
   return (
     <section
-      className="place-self-stretch my-12 sm:my-14 lg:my-16 p-8 bg-[var(--bg-light)] dark:bg-[var(--bg-dark)] 
+      className="my-12 sm:my-14 lg:my-16 p-8 bg-[var(--bg-light)] dark:bg-[var(--bg-dark)] 
       rounded-lg shadow-lg border border-[var(--border-light)] dark:border-[var(--border-dark)]"
     >
       <header className="mb-8">

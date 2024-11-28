@@ -54,7 +54,7 @@ const App = () => {
       <ScrollProgressBar />
 
       {/* Main Content */}
-      <main className="flex-1 max-w-6xl mx-auto p-6 lg:p-10 space-y-16">
+      <main className="flex-1 max-w-6xl p-6 lg:p-10 space-y-16">
         <AnimatedSection>
           <section id="profile">
             <Profile />

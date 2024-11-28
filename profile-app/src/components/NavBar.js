@@ -81,7 +81,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="sticky place-self-stretch top-0 bg-[var(--bg-light)] dark:bg-[var(--bg-dark)] shadow-md z-50">
+      <nav className="sticky top-0 bg-[var(--bg-light)] dark:bg-[var(--bg-dark)] shadow-md z-50">
         <div className="max-w-4xl mx-auto flex items-center justify-between p-4">
           {/* Logo/Brand */}
           <div className="text-xl font-semibold text-[var(--text-light)] dark:text-[var(--text-dark)]">
