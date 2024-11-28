@@ -1,5 +1,5 @@
 // Card.js
-const Card = ({ children, link, image }) => {
+const Card = ({ children, link }) => {
   const content = (
     <div className="bg-[var(--card-light)] dark:bg-[var(--card-dark)] text-[var(--text-light)] dark:text-[var(--text-dark)] 
     p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 
