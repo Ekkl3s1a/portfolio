@@ -80,8 +80,8 @@ const Projects = () => {
       {/* Swiper */}
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={-30}
-        slidesPerView={2}
+        spaceBetween={10}
+        slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 8000 }}
@@ -94,7 +94,7 @@ const Projects = () => {
         className="pb-8"
       >
         {projects.map((project, index) => (
-          <SwiperSlide key={index} className="px-12 py-8">
+          <SwiperSlide key={index} className="py-8">
             <Tooltip tooltipText={project.description || "No description available"}>
               <Card link={project.link}>
                 <div className="flex items-center space-x-4">
