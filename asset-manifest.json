@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.c53287a5.css",
+    "main.js": "/portfolio/static/js/main.d8231578.js",
+    "static/js/453.94f6bf8f.chunk.js": "/portfolio/static/js/453.94f6bf8f.chunk.js",
+    "static/media/fa-solid-900.ttf": "/portfolio/static/media/fa-solid-900.ad1782c70927ebc5bc87.ttf",
+    "static/media/fa-brands-400.ttf": "/portfolio/static/media/fa-brands-400.26b80c8830bebf340211.ttf",
+    "static/media/fa-solid-900.woff2": "/portfolio/static/media/fa-solid-900.83a538a018a9e44b023a.woff2",
+    "static/media/fa-brands-400.woff2": "/portfolio/static/media/fa-brands-400.fdbb558523a380307689.woff2",
+    "static/media/PCEP_Badge.png": "/portfolio/static/media/PCEP_Badge.8212ba271aea0aa4a774.png",
+    "static/media/fa-regular-400.ttf": "/portfolio/static/media/fa-regular-400.05fdd87be89f7f8f0a1e.ttf",
+    "static/media/PSMI_Badge.png": "/portfolio/static/media/PSMI_Badge.cbd9e53fbbdc3cf4ddea.png",
+    "static/media/fa-regular-400.woff2": "/portfolio/static/media/fa-regular-400.4f6a2dabee9c092d09b9.woff2",
+    "static/media/fa-v4compatibility.ttf": "/portfolio/static/media/fa-v4compatibility.fa86b3c85e77abbd2ebd.ttf",
+    "static/media/fa-v4compatibility.woff2": "/portfolio/static/media/fa-v4compatibility.c3ea317a0f10f201597f.woff2",
+    "index.html": "/portfolio/index.html",
+    "main.c53287a5.css.map": "/portfolio/static/css/main.c53287a5.css.map",
+    "main.d8231578.js.map": "/portfolio/static/js/main.d8231578.js.map",
+    "453.94f6bf8f.chunk.js.map": "/portfolio/static/js/453.94f6bf8f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c53287a5.css",
+    "static/js/main.d8231578.js"
+  ]
+}
