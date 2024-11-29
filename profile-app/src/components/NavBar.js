@@ -161,7 +161,7 @@ const NavBar = () => {
       </nav>
       {/* Back to Top Button */}
       {showBackToTop && (
-        <div className="fixed bottom-5 right-5">
+        <div className="fixed bottom-5 right-5 z-50">
           <button
             onClick={scrollToTop}
             className="p-3 rounded-full bg-[var(--card-light)] dark:bg-[var(--card-dark)] text-[var(--text-light)] dark:text-[var(--text-dark)] shadow-lg transition-transform transform hover:scale-110 focus:outline-none"
