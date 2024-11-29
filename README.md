@@ -19,7 +19,7 @@ A sleek and modern React.js and Tailwind CSS application designed to highlight p
 - Hosting: [GitHub Pages](https://pages.github.com/)
 
 ## 🤸 Live Demo
-🎯 Check it out here: [Live Profile Page](https://f13nd5.github.io/portfolio)
+🎯 Check it out here: [Live Profile Page](https://ekkl3s1a.github.io/portfolio/)
 
 ## 🕸️ Why This Project?
 
