@@ -17,7 +17,7 @@ const Projects = () => {
   useEffect(() => {
     const fetchGitHubProjects = async () => {
       try {
-        const response = await fetch("https://api.github.com/users/F13ND5/repos?visibility=public");
+        const response = await fetch("https://api.github.com/users/Ekkl3s1a/repos?visibility=public");
         if (!response.ok) {
           throw new Error("Failed to fetch projects");
         }

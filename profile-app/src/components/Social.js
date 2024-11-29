@@ -17,7 +17,7 @@ const socials = [
   },
   {
     name: "GitHub Profile",
-    link: "https://github.com/f13nd5",
+    link: "https://github.com/Ekkl3s1a",
     image: (
       <FontAwesomeIcon
         icon={faGithub}

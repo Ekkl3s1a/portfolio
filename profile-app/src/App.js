@@ -100,7 +100,7 @@ const App = () => {
         {/* Social Media Links */}
         <div className="flex justify-center space-x-6 mb-4">
           <a
-            href="https://github.com/f13nd5"
+            href="https://github.com/Ekkl3s1a"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[var(--text-light)] dark:text-[var(--text-dark)] hover:text-indigo-500 transition"
